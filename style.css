@@ -8,22 +8,20 @@ body {
 }
 
 body {
-    background: #000;
+    background: black;
 }
 
 #background {
     position: fixed;
-    top: -5%;
-    left: -5%;
-    width: 110%;
-    height: 110%;
-    background: url("assets/background.webp") center center / cover no-repeat;
-    filter: blur(6px);
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    background-image: url("assets/background.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(20px);
     pointer-events: none;
     z-index: -1;
-}
-
-main {
-    position: relative;
-    z-index: 1;
 }
