@@ -20,7 +20,7 @@ body {
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    filter: blur(8px);
+    filter: blur(6px);
     pointer-events: none;
     z-index: 0;
 }
@@ -28,7 +28,7 @@ body {
 #overlay {
     position: relative;
     z-index: 1;
-    width: 70%;
+    width: 60%;
     min-height: 100vh;
     margin: 0 auto;
     background: rgba(0, 0, 0, 0.45);
