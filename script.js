@@ -14,10 +14,6 @@ function loadFrame(index) {
             resolve(img);
         };
 
-        img.onerror = () => {
-            reject(new Error(`Impossible de charger frame${String(index).padStart(3, "0")}.png`));
-        };
-
         img.src = `assets/frame${String(index).padStart(3, "0")}.png`;
     });
 }
