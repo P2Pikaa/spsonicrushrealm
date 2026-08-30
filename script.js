@@ -1,13 +1,11 @@
 const background = document.getElementById("background");
-
 const totalFrames = 24;
 const fps = 5;
-
 const frames = [];
 let currentFrame = 0;
 
 function loadFrame(index) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         const img = new Image();
 
         img.onload = () => {
@@ -19,27 +17,22 @@ function loadFrame(index) {
 }
 
 async function startAnimation() {
-    try {
-        for (let i = 1; i <= totalFrames; i++) {
-            const frame = await loadFrame(i);
-            frames.push(frame);
+    for (let i = 1; i <= totalFrames; i++) {
+        const frame = await loadFrame(i);
+        frames.push(frame);
+    }
+
+    background.style.backgroundImage = `url("${frames[0].src}")`;
+
+    setInterval(() => {
+        currentFrame++;
+
+        if (currentFrame >= totalFrames) {
+            currentFrame = 0;
         }
 
-        background.style.backgroundImage = `url("${frames[0].src}")`;
-
-        setInterval(() => {
-            currentFrame++;
-
-            if (currentFrame >= totalFrames) {
-                currentFrame = 0;
-            }
-
-            background.style.backgroundImage = `url("${frames[currentFrame].src}")`;
-        }, 1000 / fps);
-
-    } catch (error) {
-        console.error(error);
-    }
+        background.style.backgroundImage = `url("${frames[currentFrame].src}")`;
+    }, 1000 / fps);
 }
 
 startAnimation();
