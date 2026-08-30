@@ -4,7 +4,6 @@ const totalFrames = 24;
 const fps = 24;
 
 const frames = [];
-let loadedFrames = 0;
 let currentFrame = 0;
 
 function loadFrame(index) {
@@ -12,7 +11,6 @@ function loadFrame(index) {
         const img = new Image();
 
         img.onload = () => {
-            loadedFrames++;
             resolve(img);
         };
 
@@ -20,7 +18,7 @@ function loadFrame(index) {
             reject(new Error(`Impossible de charger frame${String(index).padStart(3, "0")}.png`));
         };
 
-        img.src = `assets/background/frame${String(index).padStart(3, "0")}.png`;
+        img.src = `assets/frame${String(index).padStart(3, "0")}.png`;
     });
 }
 
