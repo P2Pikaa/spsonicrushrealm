@@ -8,7 +8,7 @@ body {
 }
 
 body {
-    background: black;
+    background: #000;
 }
 
 #background {
@@ -23,5 +23,10 @@ body {
     background-repeat: no-repeat;
     filter: blur(20px);
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
+}
+
+main {
+    position: relative;
+    z-index: 1;
 }
