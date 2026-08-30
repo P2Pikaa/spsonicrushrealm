@@ -1,7 +1,7 @@
 const background = document.getElementById("background");
 
 const totalFrames = 24;
-const fps = 15;
+const fps = 5;
 
 const frames = [];
 let currentFrame = 0;
